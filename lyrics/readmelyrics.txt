@@ -1,0 +1,1 @@
+This folder needs to be here for lyrics processing.
