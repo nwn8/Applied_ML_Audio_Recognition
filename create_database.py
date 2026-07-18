@@ -23,7 +23,7 @@ def create_database(db_name="songs_database.db"):
     """)
 
     # -----------------------------
-    # FINGERPRINTS TABLE
+    # FINGERPRINTS TABLE test
     # (handles tempo + pitch variants)
     # -----------------------------
     cursor.execute("""
