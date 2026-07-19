@@ -27,7 +27,13 @@ import whisper
 import librosa
 import numpy as np
 
+import create_database
 
+# -------------------------------------------------
+# CREATE SONOGS_DATABASE.DB to store song data
+# -------------------------------------------------
+
+create_database.create_database()
 # -------------------------------------------------
 # CONFIG
 # -------------------------------------------------

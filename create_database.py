@@ -73,6 +73,3 @@ def create_database(db_name="songs_database.db"):
     conn.close()
     print("Database and tables created successfully.")
 
-# Run it directly
-if __name__ == "__main__":
-    create_database()

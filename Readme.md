@@ -26,7 +26,7 @@ Applied Machine Learning Audio Recognition
 
 3. Add 25 or more MP3 audio files to the "songs" folder.  This will be the foundation of the source data.
 
-4.  run "py create_database.py" in the terminal  ---  This creates the database for storing the data with the following schema
+4.  run "py loader.py" in the terminal  ---  This creates the database for storing the data with the following schema
 
 SONGS TABLE
 
@@ -62,26 +62,39 @@ AUDIO FEATURES TABLE
 | **mfcc_20** | REAL | MFCC coefficient #20 |
 
 
-5.  Run "py loader.py" in the terminal  -  This will extract all of the audio data from the files in the "songs" folder and add the data to the songs_database.db
+5.  Then it will extract all of the audio data from the files in the "songs" folder and add the data to the songs_database.db
 
 ###  Exploratory Data Analytics
 
-6.  Now that there is data in the database you can explore the datas various attributes and understand the data using Project_EDA.ipynb
+6.  Now that there is data in the database you can explore the various attributes and understand the data using Project_EDA.ipynb
+
+note- lyrics are extracted to get a word count and unique word count to be added to the features dataframe.
 
 ### Extract Data from "Unknown" audio file in Uploaded_song folder
 
-7.  Add an audio MP3 file into the uploaded_song folder and run "py uploaded_song_process.py" .  This will create an uploaded_song_database and store the same tables as the songs_database.   
+7.  Add an audio MP3 file into the uploaded_song folder and run "py uploaded_song_process.py" .  This will create an uploaded_song_database and tables.  This will also create 4 variants of the song including pitch shifted up, pitch shifted down, sped up, and slowed down versions.  Then it will extract process the data and store in the uploaded_song_database. 
+
+
+###  Fingerprints Comparison
+
+8.  Now that there is data in both databases you are able to see if the fingerprints of the uploaded versions compare to any fingerprints in the songs_database.  While it is possible to compare song variant fingerprints it is best to compare the original song upload fingerprint to the songs_database fingerprints.  
+    Run "py fingerprints_comparison.py" to see if there is a match of fingerprints. Changing the "location" will allow you to test the 
+variation fingerprints.  
+For true validation purposes we are only concerned with an exact fingerprint match. (score of 1.0)  
+With a score of 1.0 we know that the song is an exact match of a song in the songs_database. 
 
 ###  Create the Features Dataframe and Machine Learning Model
 
 8.  Run the notebook Project_ML_Model.ipynb to create the feature dataframe and train the model.  This notebook will also compare the uploaded "unknown" song in uploaded_song folder to the dataframe and return the closest match using KNN Machine learning model.   
 
 
-### Create and Test Variants for ML accuracy 
+### Test Variants for ML accuracy vs Fingerprint Accuracy
 
- Can the machine learning model match a variant of the original?  
+ Can the machine learning model or fingerprint model match a variant of the original?  
 
- 9.  Create variants of the Unknown song by running "py Create_song_variants_for_testing.py".  This will create a varints_mp3 folder with 4 variants of my_uploaded_song.mp3 including pitch shifted up , pitch shifted down, sped up, slowed down versions of the original. 
+ Test the variants in the ML model by changing the location in Project_ML_Model.ipynb (section 5).  
 
- 10.  Process song variants into a database to extract features.  
+ Test the accuracy of the Fingerprints algorithm by changing the location.  
+
+ 
 
