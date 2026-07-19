@@ -28,6 +28,17 @@ Applied Machine Learning Audio Recognition
 
 4.  run "py create_database.py" in the terminal  ---  This creates the database for storing the data with the following schema
 
+| Column | Type | Description |
+| --- | --- | --- |
+| **song_id** | INTEGER (PK, auto‑increment) | Unique identifier for each song |
+| **title** | TEXT | Song title |
+| **duration** | REAL | Duration of the track (in seconds) |
+| **lyrics** | TEXT | Raw lyrics text |
+| **cleaned_lyrics** | TEXT | Preprocessed lyrics (lowercased, punctuation removed, etc.) |
+| **word_count** | INTEGER | Total number of words in the lyrics |
+| **unique_word_count** | INTEGER | Number of unique words |
+| **word_freq** | TEXT / JSON | Serialized word‑frequency dictionary |
+
 Songs
 -------
 song_id (pk) auto increment
