@@ -130,26 +130,7 @@ seaborn
 # Interactive plotting library, often used with Shiny apps (~20-25 MB)
 plotly
 
-# ======================================================
-# CONTINUOUS INTELLIGENCE AND INTERACTIVE ANALYTICS
-# ======================================================
 
-# Shiny framework for Python applications (~5-10 MB)
-#shiny
-
-# ======================================================
-# KAFKA STREAMING MESSAGE BROKER INTEGRATION
-# ======================================================
-
-# Apache Kafka Python client (~1 MB)
-#kafka-python
-
-# ======================================================
-# STREAM PROCESSING - CAN BE VERY LARGE
-# ======================================================
-
-# Streaming data processing framework (~200-250 MB)
-#pyspark<4.0.0
 
 # ======================================================
 # MACHINE LEARNING (ML)
@@ -158,15 +139,6 @@ plotly
 # Core ML library with flexible APIs (~40-50 MB)
 #scikit-learn
 
-# ======================================================
-# NATURAL LANGUAGE PROCESSING (NLP) - CAN BE VERY LARGE
-# ======================================================
-
-# NLP library for text processing (~10 MB core library; downloading corpora can add ~1 GB).
-#nltk
-
-# SpaCy: A powerful NLP library ~50 MB (core library; language models + ~300 MB or more per model).
-#spacy
 
 
 # ======================================================
@@ -179,16 +151,31 @@ pyacoustid
 # Extract the fpcalc file to C:\Chromaprint folder.
 # Add to the PATH in powershell: setx PATH "$($env:PATH);C:\chromaprint"
 
-==================================================
+#==================================================
 
 librosa
 
 # Used to create 20 unique spectral analysis of each audio file.
 
-==================================================
+#==================================================
 
 openai-whisper 
 
 # Openai-whisper requires ffmpeg  
 #  The easiest ffmpeg install is as follows
 # open powershell as admin and run winget install Gyan.FFmpeg
+
+
+
+#===================================================
+
+pydub
+
+# used to create variants of uploaded song to test the machine learning model
+
+
+#===================================================
+
+Levenshtein
+
+# Used to create a similarity score of fingerprints.

@@ -77,3 +77,11 @@ AUDIO FEATURES TABLE
 8.  Run the notebook Project_ML_Model.ipynb to create the feature dataframe and train the model.  This notebook will also compare the uploaded "unknown" song in uploaded_song folder to the dataframe and return the closest match using KNN Machine learning model.   
 
 
+### Create and Test Variants for ML accuracy 
+
+ Can the machine learning model match a variant of the original?  
+
+ 9.  Create variants of the Unknown song by running "py Create_song_variants_for_testing.py".  This will create a varints_mp3 folder with 4 variants of my_uploaded_song.mp3 including pitch shifted up , pitch shifted down, sped up, slowed down versions of the original. 
+
+ 10.  Process song variants into a database to extract features.  
+

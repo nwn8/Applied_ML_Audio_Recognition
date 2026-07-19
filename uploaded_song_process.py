@@ -1,5 +1,4 @@
 """
-loader.py
 
 Loads MP3 songs from the uploaded_songs folder into the SQLite database.
 
@@ -26,12 +25,18 @@ import acoustid
 import whisper
 import librosa
 import numpy as np
-
+import Create_song_variants_for_testing
 # -------------------------------------------------
 # CREATE DB FOR UPLOADED SONG
 # -------------------------------------------------
 
 create_db_uploaded_song.create_database()
+
+# -------------------------------------------------
+# CREATE 4 song variants of uploaded song
+# -------------------------------------------------
+
+Create_song_variants_for_testing.create_song_variants_mp3("uploaded_song/my_uploaded_song.mp3")
 
 # -------------------------------------------------
 # CONFIG
@@ -480,6 +485,48 @@ def load_songs():
 
     print("\nDONE: Songs, lyrics, fingerprints, and MFCC audio features loaded.")
 
+# -------------------------------------------------
+# CLEANUP: DELETE ALL LYRICS TEXT FILES
+# -------------------------------------------------
+
+def clear_uploaded_lyrics():
+    """
+    Deletes all .txt files inside the uploaded_lyrics folder.
+    """
+    for file_name in os.listdir(LYRICS_FOLDER):
+        if file_name.lower().endswith(".txt"):
+            file_path = os.path.join(LYRICS_FOLDER, file_name)
+            try:
+                os.remove(file_path)
+                print(f"Deleted lyrics file: {file_path}")
+            except Exception as e:
+                print(f"Failed to delete {file_path}: {e}")
+
+# -------------------------------------------------
+# CLEANUP: DELETE SONG VARIANTS
+# -------------------------------------------------
+
+VARIANT_FILES = {
+    "pitch_down_2.mp3",
+    "pitch_up_2.mp3",
+    "slowed_10.mp3",
+    "sped_10.mp3"
+}
+
+def clear_song_variants():
+    """
+    Deletes known variant MP3 files from the uploaded_song folder.
+    """
+    for file_name in os.listdir(SONG_FOLDER):
+        if file_name in VARIANT_FILES:
+            file_path = os.path.join(SONG_FOLDER, file_name)
+            try:
+                os.remove(file_path)
+                print(f"Deleted variant file: {file_path}")
+            except Exception as e:
+                print(f"Failed to delete {file_path}: {e}")
+
+
 
 # -------------------------------------------------
 # ENTRY POINT
@@ -487,3 +534,5 @@ def load_songs():
 
 if __name__ == "__main__":
     load_songs()
+    clear_uploaded_lyrics()
+    clear_song_variants()
