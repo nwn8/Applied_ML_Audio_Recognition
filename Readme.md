@@ -90,11 +90,11 @@ With a score of 1.0 we know that the song is an exact match of a song in the son
 
 ### Test Variants for ML accuracy vs Fingerprint Accuracy
 
- Can the machine learning model or fingerprint model match a variant of the original?  
+Can the machine learning model or fingerprint model match a variant of the original?  
 
- Test the variants in the ML model by changing the location in Project_ML_Model.ipynb (section 5).  
+ Test the variants in the ML model by changing the location value in Project_ML_Model.ipynb (section 5).  Each change represents an audio variant data (mfcc, word count, unique word count) in the uploaded_song_database.
 
- Test the accuracy of the Fingerprints algorithm by changing the location.  
+ Test the accuracy of the Fingerprints algorithm by changing the location value.  Each change represents an audio variant fingerprint in the uploaded_song_database
 
- 
+
 
