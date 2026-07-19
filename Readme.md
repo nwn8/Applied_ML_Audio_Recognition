@@ -28,7 +28,7 @@ Applied Machine Learning Audio Recognition
 
 4.  run "py create_database.py" in the terminal  ---  This creates the database for storing the data with the following schema
 
-Songs Table
+SONGS TABLE
 
 | Column | Type | Description |
 | --- | --- | --- |
@@ -41,14 +41,15 @@ Songs Table
 | **unique_word_count** | INTEGER | Number of unique words |
 | **word_freq** | TEXT / JSON | Serialized word‑frequency dictionary |
 
-Fingerprints Table
+FINGERPRINTS TABLE
+
 | Column | Type | Description |
 | --- | --- | --- |
 | **fingerprint_id** | INTEGER (PK, auto‑increment) | Unique fingerprint record ID |
 | **song_id** | INTEGER (FK → Songs.song_id) | Song associated with this fingerprint |
 | **fingerprint** | TEXT | Chromaprint fingerprint string |
 
-Audio Features TAble
+AUDIO FEATURES TABLE
 
 | Column | Type | Description |
 | --- | --- | --- |
