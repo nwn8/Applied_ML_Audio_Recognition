@@ -1,0 +1,3 @@
+This is a placeholder file.
+
+The uploaded song to compare to the database will exist in this folder
